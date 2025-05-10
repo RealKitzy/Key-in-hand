@@ -1,4 +1,9 @@
 body {
+    background-image: url(background/42190916-ai-gerado-metal-texturizado-hexagonos-fundo-gratis-foto.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -27,8 +32,7 @@ h1 {
     flex-direction: column;
 }
 
-.avatar-upload,
-.banner-upload {
+.upload-section {
     margin-bottom: 20px;
     text-align: left;
     border: 1px solid #ddd;
@@ -50,45 +54,6 @@ input[type="file"] {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1em;
-}
-
-.current-avatar,
-.current-banner {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.current-avatar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 5px;
-    border: 2px solid #ccc;
-}
-
-.banner-preview {
-    width: 100%;
-    max-height: 150px;
-    overflow: hidden;
-    border-radius: 4px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner-preview img {
-    width: 100%;
-    object-fit: cover;
-}
-
-small {
-    display: block;
-    color: #777;
-    font-size: 0.8em;
-    margin-top: 5px;
 }
 
 .save-button {

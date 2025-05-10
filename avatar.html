@@ -10,26 +10,14 @@
     <div class="profile-container">
         <h1>Editar Perfil</h1>
         <form class="profile-form" action="#">
-            <div class="avatar-upload">
+            <div class="upload-section">
                 <label for="avatar">Enviar Avatar (Foto de Perfil)</label>
                 <input type="file" id="avatar" name="avatar" accept="image/*">
-                <div class="current-avatar">
-                    <p>Avatar atual:</p>
-                    <img src="img/default-avatar.png" alt="Avatar Atual">
-                    <small>(A imagem atual é apenas um exemplo)</small>
-                </div>
             </div>
 
-            <div class="banner-upload">
+            <div class="upload-section">
                 <label for="banner">Enviar Banner (Imagem de Fundo)</label>
                 <input type="file" id="banner" name="banner" accept="image/*">
-                <div class="current-banner">
-                    <p>Banner atual:</p>
-                    <div class="banner-preview">
-                        <img src="img/default-banner.png" alt="Banner Atual">
-                    </div>
-                    <small>(A imagem atual é apenas um exemplo)</small>
-                </div>
             </div>
 
             <button type="submit" class="save-button">Salvar Alterações</button>
