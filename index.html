@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html id="Main-Page">
+<html lang="pt-BR">
 <head>
-    <title> Key in hand </title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
-<body id = "corpo">
-    <div class="top-bar">
-        <a class="perfil-link" href="avatar.html">Perfil</a>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form class="login-form" action="paginainicial.html">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Entrar</button>
+            <div class="links">
+                <a href="esqueceu_a_senha.html">Esqueceu a senha?</a>
+                <a href="criar.html">Criar uma conta</a>
+            </div>
+        </form>
     </div>
-    <h1 class="Titulo"><strong> Key in hand </strong></h1>
-    <h2 class="sub_titulo"> Encontre o Seu Lugar Perfeito Conosco! </h2>
-
-    <ul class="contato">
-        <li>Contato : </li>
-        <li>Instagram :</li>
-    </ul>
-    <br>
-    <a class="produtos" href="produtos.html"> Produtos </a>
 </body>
 </html>
