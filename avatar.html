@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="avatar.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Editar Perfil</h1>
+        <form class="profile-form" action="#">
+            <div class="avatar-upload">
+                <label for="avatar">Enviar Avatar (Foto de Perfil)</label>
+                <input type="file" id="avatar" name="avatar" accept="image/*">
+                <div class="current-avatar">
+                    <p>Avatar atual:</p>
+                    <img src="img/default-avatar.png" alt="Avatar Atual">
+                    <small>(A imagem atual é apenas um exemplo)</small>
+                </div>
+            </div>
+
+            <div class="banner-upload">
+                <label for="banner">Enviar Banner (Imagem de Fundo)</label>
+                <input type="file" id="banner" name="banner" accept="image/*">
+                <div class="current-banner">
+                    <p>Banner atual:</p>
+                    <div class="banner-preview">
+                        <img src="img/default-banner.png" alt="Banner Atual">
+                    </div>
+                    <small>(A imagem atual é apenas um exemplo)</small>
+                </div>
+            </div>
+
+            <button type="submit" class="save-button">Salvar Alterações</button>
+            <div class="links">
+                <a href="paginaprincipal.html">Voltar para a Página Principal</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
