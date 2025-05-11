@@ -36,7 +36,6 @@
         <p id="error-message" class="error-message hidden">Usuário ou senha inválidos!</p>
 
         <script>
-            // Função para verificar o parâmetro 'erro' na URL
             function verificarErro() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const erro = urlParams.get('erro');
@@ -49,7 +48,6 @@
                 }
             }
 
-            // Executar a função quando a página carregar
             window.onload = verificarErro;
         </script>
     </div>
