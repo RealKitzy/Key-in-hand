@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form class="login-form" action="processa_login.php" method="post">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Entrar</button>
+            <div class="links">
+                <a href="esqueceu_a_senha.html">Esqueceu a senha?</a>
+                <a href="criar.html">Criar uma conta</a>
+            </div>
+        </form>
+        <p id="error-message" class="error-message hidden">Usuário ou senha inválidos!</p>
+
+        <script>
+            function verificarErro() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const erro = urlParams.get('erro');
+                const errorMessageElement = document.getElementById('error-message');
+
+                if (erro === '1') {
+                    errorMessageElement.classList.remove('hidden');
+                } else {
+                    errorMessageElement.classList.add('hidden');
+                }
+            }
+
+            window.onload = verificarErro;
+        </script>
+    </div>
+</body>
+</html>
