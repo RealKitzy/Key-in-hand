@@ -1,18 +1,13 @@
 body {
     font-family: sans-serif;
+    margin: 20px;
     background-color: #f4f4f4;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
 }
 
 .grade {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: center;
-    align-items: center; /* <-- Isso centraliza os itens na linha */
-    margin: 0;
 }
 
 .produto-item {
@@ -55,7 +50,7 @@ body {
 }
 
 .produto-item button {
-    background-color: #ff3e00;
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 15px;

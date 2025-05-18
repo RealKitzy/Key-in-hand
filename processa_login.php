@@ -1,20 +1,121 @@
 <?php
+
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = $_POST["username"]; // Certifique-se de que o 'name' no HTML é 'username'
-    $senha = $_POST["password"];   // Certifique-se de que o 'name' no HTML é 'password'
 
-    if ($usuario == "admin" && $senha == "123456") {
-        $_SESSION["usuario"] = $usuario; // Opcional: guardar o usuário na sessão
-        header("Location: paginainicial.html"); // Redirecionar para paginainicial.html
-        exit();
-    } else {
-        header("Location: index.html?erro=1"); // Redirecionar de volta com erro
-        exit();
-    }
-} else {
-    header("Location: index.html"); // Se alguém acessar diretamente
-    exit();
+
+$servername = "localhost";
+
+$username_db = "root";
+
+$password_db = "";
+
+$dbname = "t3";
+
+$port = 3308;
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+$email_digitado = $_POST["username"];
+
+$senha_digitada = $_POST["password"];
+
+
+
+error_log("[LOGIN DEBUG] Tentativa de login com email: " . $email_digitado);
+
+
+
+ $conn = new mysqli($servername, $username_db, $password_db, $dbname, $port);
+
+
+
+ if ($conn->connect_error) {
+
+ die("Erro na conexão com o banco de dados: " . $conn->connect_error);
+
+ }
+
+
+
+$sql = "SELECT id, email, password FROM user WHERE email = ?";
+
+ $stmt = $conn->prepare($sql);
+
+
+
+if ($stmt) {
+
+$stmt->bind_param("s", $email_digitado);
+
+ $stmt->execute();
+
+ $result = $stmt->get_result();
+
+
+
+ if ($result->num_rows == 1) {
+
+ $row = $result->fetch_assoc();
+
+error_log("[LOGIN DEBUG] Senha hasheada do banco: " . $row["password"]);
+
+ $senha_correta = password_verify($senha_digitada, $row["password"]);
+
+ error_log("[LOGIN DEBUG] Resultado da verificação da senha: " . ($senha_correta ? 'true' : 'false'));
+
+
+
+ if ($senha_correta) {
+
+ $_SESSION["user_id"] = $row["id"];
+
+ $_SESSION["username"] = $row["email"];
+
+ header("Location: paginainicial.html");
+
+ exit();
+
+ } else {
+
+header("Location: index.html?error=1");
+
+exit();
+
+ }
+
+ } else {
+
+ header("Location: index.html?error=1");
+
+ exit();
+
 }
+
+
+
+ $stmt->close();
+
+ } else {
+
+header("Location: index.html?error=2");
+
+ exit();
+
+ }
+
+
+
+ $conn->close();
+
+} else {
+
+ header("Location: index.html");
+
+ exit();
+
+}
+
 ?>
