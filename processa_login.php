@@ -94,8 +94,6 @@ exit();
 
 }
 
-
-
  $stmt->close();
 
  } else {
@@ -105,8 +103,6 @@ header("Location: index.html?error=2");
  exit();
 
  }
-
-
 
  $conn->close();
 
