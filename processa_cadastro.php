@@ -69,7 +69,7 @@ class UserRegistration {
             $stmt->bind_param("ssssss", $name, $email, $hashed_password, $birthdate, $city, $token);
 
             if ($stmt->execute()) {
-                header("Location: register_success.html");
+                header("Location: index.html");
             } else {
                 echo "Registration error: " . $stmt->error;
             }
